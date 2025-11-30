@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adebare Adesokan</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header class="site-header">
+            <div class="logo">Adebare Adesokan</div>
+            
+            <div class="nav-wrapper">
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="about.html" class="active">About</a>
+                </nav>
+
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark Mode">
+                    <svg class="moon-icon" viewBox="0 0 24 24">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun-icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <section class="intro">
+            <h1>About Me</h1>
+            <p>
+                I am a software engineer focused on building accessible, human-centered products. 
+                I have a strong background in frontend architecture and a growing interest in Web3 applications.
+            </p>
+        </section>
+
+        <section class="projects">
+            <h2 class="mono-heading"><span>></span> core_contributions</h2>
+            
+            <div class="project-item">
+                <div class="project-info">
+                    <h3>SWE Intern,Ecobank E-Process</h3>
+                    <p style="font-size: 0.85rem; margin-bottom: 5px; color: var(--text-muted);">2023,2024</p>
+                    <p>I built reliable backend systems using Spring Boot and MySQL, designed efficient APIs, 
+                        optimized database performance, and ensured smooth communication with front-end applications.
+                         I focused on clean architecture, seamless data handling, and improving overall system performance. 
+                         </p>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-info">
+                    <h3>Product Intern, Bazara Tech</h3>
+                    <p style="font-size: 0.85rem; margin-bottom: 5px; color: var(--text-muted);">2025</p>
+                    <p>I worked closely with a small engineering team to support the development and optimization
+                         of the platform’s backend and data workflows. I contributed to tasks such as API 
+                         testing, debugging, documentation, and feature support, while also gaining hands-on
+                          experience with real product development cycles, agile collaboration, 
+                          and user-centric problem solving. The role strengthened my technical foundation,
+                           improved my teamwork and communication skills, and gave me meaningful exposure to how tech products are built and maintained in a fast-paced environment.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="thoughts">
+            <h2 class="mono-heading"><span>></span> tech_stack</h2>
+            <p>
+                JavaScript (ES6+), TypeScript, React, Node.js, Python, PostgreSQL,C++,Rust,Solidity.
+            </p>
+        </section>
+
+        <footer class="site-footer">
+            <p>Contact me <a href="mailto:adesokanadebare@gmail.com">here</a></p>
+        </footer>
+    </div>
+
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const body = document.body;
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+        }
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            let theme = 'light';
+            if (body.classList.contains('dark-mode')) {
+                theme = 'dark';
+            }
+            localStorage.setItem('theme', theme);
+        });
+    </script>
+
+</body>
+</html>

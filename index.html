@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adebare Adesokan</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <header class="site-header">
+            <div class="logo">Adebare Adesokan</div>
+
+            <div class="nav-wrapper">
+                <nav>
+                    <a href="index.html" class="active">Home</a>
+                    <a href="about.html">About</a>
+                </nav>
+
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark Mode">
+                    <svg class="moon-icon" viewBox="0 0 24 24">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun-icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <section class="intro">
+            <p class="greeting">Hi,</p>
+            <h1>Welcome</h1>
+            <p>
+                I'm Adebare Adesokan, I’m a
+                final-year undergraduate exploring and building in
+                the world of tech Using this as an avenue to record my journey
+            </p>
+
+            <p class="sub-text">
+                Check out the <a href="about.html">About</a> section to see the core contributions I've made so far.
+            </p>
+        </section>
+
+        <section class="projects">
+            <h2 class="mono-heading"><span>></span> personal_projects</h2>
+
+            <div class="project-item">
+                <div class="project-info">
+                    <h3>Afara AI</h3>
+                    <p>an AI model that encourages cultural heritage</p>
+                </div>
+                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7206233774013968384/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3Bw20OhbaMQ%2FK3YiyIB3n%2FGQ%3D%3D"
+                    class="view-source">view_source</a>
+            </div>
+
+            <div class="project-item">
+                <div class="project-info">
+                    <h3>Shift Management system</h3>
+                    <p>This was designed for staff of my school to automate shift logging and tracking</p>
+                </div>
+                <a href="https://github.com/Barizio/SAASMS" class="view-source">view_source</a>
+            </div>
+
+            <div class="project-item">
+                <div class="project-info">
+                    <h3>Blockblast Solver</h3>
+                    <p>this is a personal project, i really enjoy playing a mobile game called blockblast and I am
+                        developing an ai tool to help me find the best possible moves evry time </p>
+                </div>
+                <a href="https://github.com/Barizio/BlockBlast-Solver" class="view-source">view_source</a>
+            </div>
+
+            <a href="www.linkedin.com/in/adebare-adesokan-570b7b260" class="explore-more">explore_more -></a>
+        </section>
+
+
+
+        <!-- <section class="thoughts">
+            <h2 class="mono-heading"><span>></span> my_thoughts_written_down</h2>
+            
+            <div class="article-list">
+                <div class="article-item">
+                    <span class="date">2025</span>
+                    <a href="#" class="title">Recursive Language Models (Paper Review)</a>
+                </div>
+                <div class="article-item">
+                    <span class="date">2025</span>
+                    <a href="#" class="title">Self-Adapting Language Models</a>
+                </div>
+                <div class="article-item">
+                    <span class="date">2025</span>
+                    <a href="#" class="title">Decentralized Compute is Criminally Underrated</a>
+                </div>
+                <div class="article-item">
+                    <span class="date">2024</span>
+                    <a href="#" class="title">Zero Knowledge Machine Learning: A Path to Privacy</a>
+                </div>
+            </div>
+        </section> -->
+
+        <footer class="site-footer">
+            <p>Contact me <a href="mailto:adesokanadebare@gmail.com">here</a></p>
+        </footer>
+    </div>
+
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // 1. Check if user already has a preference saved in LocalStorage
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+        }
+
+        // 2. Listen for button click
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+
+            // 3. Save preference to LocalStorage so it remembers next time
+            let theme = 'light';
+            if (body.classList.contains('dark-mode')) {
+                theme = 'dark';
+            }
+            localStorage.setItem('theme', theme);
+        });
+    </script>
+
+</body>
+
+</html>
