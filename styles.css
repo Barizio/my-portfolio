@@ -1,6 +1,6 @@
-/* =========================================
+/* 
    1. VARIABLES (THEMING SYSTEM)
-   ========================================= */
+    */
 :root {
     /* Light Mode (Default) */
     --bg-color: #ffffff;
@@ -23,9 +23,9 @@ body.dark-mode {
     --accent-color: #ffffff;
 }
 
-/* =========================================
+/* 
    2. RESET & BASE STYLES
-   ========================================= */
+    */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -63,9 +63,9 @@ a:hover {
     padding: 40px 20px;
 }
 
-/* =========================================
+/* 
    3. HEADER & NAV
-   ========================================= */
+    */
 .site-header {
     display: flex;
     justify-content: space-between;
@@ -128,9 +128,9 @@ a:hover {
 body.dark-mode .theme-toggle .sun-icon { display: block; }
 body.dark-mode .theme-toggle .moon-icon { display: none; }
 
-/* =========================================
+/* 
    4. SECTIONS & TYPOGRAPHY
-   ========================================= */
+    */
 /* Intro */
 .intro {
     margin-bottom: 60px;
@@ -177,9 +177,9 @@ body.dark-mode .theme-toggle .moon-icon { display: none; }
     margin-right: 8px;
 }
 
-/* =========================================
+/* 
    5. PROJECT LIST
-   ========================================= */
+    */
 .projects {
     margin-bottom: 60px;
 }
@@ -232,9 +232,9 @@ body.dark-mode .theme-toggle .moon-icon { display: none; }
     text-decoration: none;
 }
 
-/* =========================================
+/* 
    6. ARTICLE LIST
-   ========================================= */
+    */
 .thoughts {
     margin-bottom: 60px;
 }
@@ -263,9 +263,9 @@ body.dark-mode .theme-toggle .moon-icon { display: none; }
     text-decoration: underline;
 }
 
-/* =========================================
+/* 
    7. EXTRAS & FOOTER
-   ========================================= */
+    */
 .animation-container {
     text-align: center;
     margin: 40px 0 60px;
@@ -288,4 +288,81 @@ body.dark-mode .theme-toggle .moon-icon { display: none; }
     font-size: 0.9rem;
     color: var(--text-secondary);
     margin-bottom: 40px;
+}
+
+/* 
+   8. PROJECT DETAILS PAGE EXTRAS
+    */
+
+/* Spacing between text blocks */
+.project-details-block {
+    margin-bottom: 50px;
+}
+
+/* Feature List Styling */
+.feature-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.feature-list li {
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+    color: var(--text-secondary);
+}
+
+.feature-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--text-muted);
+}
+
+.feature-list strong {
+    color: var(--text-main);
+}
+
+/* Tech Tags (Pill shape) */
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tech-tags span {
+    background-color: var(--hover-bg);
+    color: var(--text-main);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-family: 'JetBrains Mono', monospace;
+    border: 1px solid var(--border-color);
+}
+
+/* Screenshot Placeholders */
+.screenshot-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.screenshot-placeholder {
+    width: 100%;
+    height: 200px;
+    background-color: var(--hover-bg);
+    border: 1px dashed var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+    border-radius: 8px;
+}
+
+/* Mobile responsive for screenshots */
+@media (max-width: 600px) {
+    .screenshot-grid {
+        grid-template-columns: 1fr;
+    }
 }

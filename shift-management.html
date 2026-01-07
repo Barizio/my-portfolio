@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shift Management System - Project Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header class="site-header">
+            <div class="logo">Adebare Adesokan</div>
+            
+            <div class="nav-wrapper">
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                </nav>
+
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark Mode">
+                    <svg class="moon-icon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <svg class="sun-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                </button>
+            </div>
+        </header>
+
+        <section class="intro">
+            <p class="greeting"><a href="index.html" style="text-decoration: none;">&larr; Back to Projects</a></p>
+            <h1>Shift Management System</h1>
+            <p>
+                A web-based platform designed to automate shift scheduling and tracking for school staff, replacing manual paper logs with a digital solution.
+            </p>
+            <div style="margin-top: 20px;">
+                <a href="https://github.com/Barizio/SAASMS" target="_blank" rel="noopener noreferrer" class="view-source">View Source Code</a>
+            </div>
+        </section>
+
+        <section class="projects">
+            
+            <div class="project-details-block">
+                <h2 class="mono-heading"><span>></span> the_problem</h2>
+                <p>
+                    The school staff was relying on physical logbooks to sign in and out. This led to inaccurate time tracking, difficulty in calculating total hours worked, and frequent loss of data. The administration needed a way to digitize this process to ensure accountability and ease of reporting.
+                </p>
+            </div>
+
+            <div class="project-details-block">
+                <h2 class="mono-heading"><span>></span> key_features</h2>
+                <ul class="feature-list">
+                    <li><strong>Automated Logging:</strong> Staff can clock in/out with a single fingerprint scan, recording precise timestamps.</li>
+                    <li><strong>Admin Dashboard:</strong> Administrators can view active staff and generate weekly attendance reports.</li>
+                    <li><strong>Role-Based Access:</strong> Secure login system distinguishing between regular staff and admins.</li>
+                    <li><strong>Data Export:</strong> Ability to download logs as CSV files for processing.</li>
+                </ul>
+            </div>
+
+            <div class="project-details-block">
+                <h2 class="mono-heading"><span>></span> technologies_used</h2>
+                <div class="tech-tags">
+                    <span>Java</span>
+                    <span>Mysql</span>
+                    <span>Persona digital SDK</span>
+                    
+                </div>
+            </div>
+
+            <div class="project-details-block">
+                <h2 class="mono-heading"><span>></span> screenshots</h2>
+                <div class="screenshot-grid">
+                    <img src="images/shift-1.png" alt="Login Screen" style="width:100%; border-radius:8px;" class="zoomable" onclick="openModal(this)">
+                    <img src="images/shift-2.png" alt="Admin Dashboard" style="width:100%; border-radius:8px;" class="zoomable" onclick="openModal(this)">
+                </div>
+            </div>
+
+            <div class="project-details-block">
+                <h2 class="mono-heading"><span>></span> what_i_learned</h2>
+                <p>
+                    Building this project taught me the importance of <strong>database schema design</strong> to handle relationships between users and shift logs. I also learned how to implement secure <strong>authentication flows</strong> and realized that user experience (UX) is critical when building tools for non-technical staff.
+                </p>
+            </div>
+
+        </section>
+
+        <footer class="site-footer">
+            <p>Contact me <a href="mailto:adesokanadebare@gmail.com">here</a></p>
+        </footer>
+    </div>
+
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const body = document.body;
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') body.classList.add('dark-mode');
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
+        });
+    </script>
+
+</body>
+</html>
