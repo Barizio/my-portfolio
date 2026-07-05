@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adebare Adesokan</title>
+    <meta name="description" content="Adebare Adesokan — final-year Computer Science student building systems software: a Java matching engine, a blockchain land registry, and small operating systems in Rust.">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,13 +49,14 @@
             <p class="greeting">Hi,</p>
             <h1>Welcome</h1>
             <p>
-                I'm Adebare Adesokan, I’m a
-                final-year undergraduate exploring and building in
-                the world of tech Using this as an avenue to record my journey
+                I'm Adebare Adesokan — a final-year Computer Science student at Pan Atlantic University who
+                likes building close to the metal: order-matching engines, blockchains, and small operating
+                systems, alongside full-stack and backend work from my internships.
             </p>
 
             <p class="sub-text">
-                Check out the <a href="about.html">About</a> section to see the core contributions I've made so far.
+                Check out the <a href="about.html">About</a> section for my background and experience, or browse a
+                few things I've built below.
             </p>
         </section>
 
@@ -63,63 +65,101 @@
 
             <div class="project-item">
                 <div class="project-info">
-                    <h3>Afara AI</h3>
-                    <p>an AI model that encourages cultural heritage</p>
+                    <h3>Matching Engine <span class="badge">Java 21</span></h3>
+                    <p>
+                        A production-quality limit order-book matching engine with strict price-time priority,
+                        integer-tick pricing, O(1) cancel, and a benchmark harness clocking ~1.4M orders/sec.
+                    </p>
+                    <a href="matching-engine.html" class="learn-more">learn_more &rarr;</a>
                 </div>
-                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7206233774013968384/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3Bw20OhbaMQ%2FK3YiyIB3n%2FGQ%3D%3D"
+                <a href="https://github.com/Barizio/matching-engine" class="view-source" target="_blank"
+                    rel="noopener noreferrer">view_source</a>
+            </div>
+
+            <div class="project-item">
+                <div class="project-info">
+                    <h3>LandLedger <span class="badge">Solidity</span></h3>
+                    <p>
+                        A blockchain-based property registry: ERC-721 land titles with a "Two-Gate" security layer
+                        (3-of-3 multi-signature quorum + biometric identity hash) and IPFS off-chain storage.
+                    </p>
+                    <a href="landledger.html" class="learn-more">learn_more &rarr;</a>
+                </div>
+                <a href="https://github.com/Barizio/landchain" class="view-source" target="_blank"
+                    rel="noopener noreferrer">view_source</a>
+            </div>
+
+            <div class="project-item">
+                <div class="project-info">
+                    <h3>Rust Kernel + Bootloader <span class="badge">Rust</span></h3>
+                    <p>
+                        A freestanding x86-64 kernel written in Rust on the <code>bootloader_api</code> crate —
+                        hardware interrupt handling and a framebuffer text writer, booting on bare metal with no
+                        standard library.
+                    </p>
+                </div>
+                <a href="https://github.com/Barizio/kernel_with_bootloader" class="view-source" target="_blank"
+                    rel="noopener noreferrer">view_source</a>
+            </div>
+
+            <div class="project-item">
+                <div class="project-info">
+                    <h3>AI Calendar Planner <span class="badge">Python</span></h3>
+                    <p>
+                        A Flask app that turns natural-language plans into scheduled events — an LLM parser
+                        extracts tasks from free text and syncs them to Google Calendar.
+                    </p>
+                </div>
+                <a href="https://github.com/Barizio/ai-calendar-planner" class="view-source" target="_blank"
+                    rel="noopener noreferrer">view_source</a>
+            </div>
+
+            <div class="project-item">
+                <div class="project-info">
+                    <h3>Afara AI <span class="badge">AI</span></h3>
+                    <p>
+                        An AI platform for preserving African cultural heritage through artifact recognition and
+                        language translation. Winner of the Google AI4Culture Hackathon.
+                    </p>
+                </div>
+                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7206233774013968384/"
                     class="view-source" target="_blank" rel="noopener noreferrer">view_source</a>
             </div>
 
             <div class="project-item">
                 <div class="project-info">
-                    <h3><a href="shift-management.html" style="text-decoration: none;">Shift Management System</a></h3>
-                    <p>This was designed for staff of my school to automate shift logging and tracking.</p>
-
-                    <a href="shift-management.html"
-                        style="font-size: 0.85rem; margin-top: 5px; display: inline-block;">learn_more &rarr;</a>
+                    <h3><a href="shift-management.html" style="text-decoration: none;">Shift Management System</a>
+                        <span class="badge">Java</span></h3>
+                    <p>Designed for staff at my school to automate shift logging and tracking, replacing manual
+                        paper logs.</p>
+                    <a href="shift-management.html" class="learn-more">learn_more &rarr;</a>
                 </div>
-                <a href="https://github.com/Barizio/SAASMS" class="view-source" target="_blank" rel="noopener noreferrer">view_source</a>
+                <a href="https://github.com/Barizio/SAASMS" class="view-source" target="_blank"
+                    rel="noopener noreferrer">view_source</a>
             </div>
 
             <div class="project-item">
                 <div class="project-info">
-                    <h3>Blockblast Solver</h3>
-                    <p>this is a personal project, i really enjoy playing a mobile game called blockblast and I am
-                        developing an ai tool to help me find the best possible moves evry time </p>
+                    <h3>BlockBlast Solver <span class="badge">Python</span></h3>
+                    <p>A personal project: an AI tool that searches for the best possible moves in the mobile game
+                        BlockBlast.</p>
                 </div>
-                <a href="https://github.com/Barizio/BlockBlast-Solver" class="view-source" target="_blank" rel="noopener noreferrer">view_source</a>
+                <a href="https://github.com/Barizio/BlockBlast-Solver" class="view-source" target="_blank"
+                    rel="noopener noreferrer">view_source</a>
             </div>
 
-            <a href="https://www.linkedin.com/in/adebare-adesokan-570b7b260" class="explore-more" target="_blank" rel="noopener noreferrer">explore_more -></a>
+            <a href="https://github.com/Barizio" class="explore-more" target="_blank"
+                rel="noopener noreferrer">explore_more -></a>
         </section>
-
-
-
-        <!-- <section class="thoughts">
-            <h2 class="mono-heading"><span>></span> my_thoughts_written_down</h2>
-            
-            <div class="article-list">
-                <div class="article-item">
-                    <span class="date">2025</span>
-                    <a href="#" class="title">Recursive Language Models (Paper Review)</a>
-                </div>
-                <div class="article-item">
-                    <span class="date">2025</span>
-                    <a href="#" class="title">Self-Adapting Language Models</a>
-                </div>
-                <div class="article-item">
-                    <span class="date">2025</span>
-                    <a href="#" class="title">Decentralized Compute is Criminally Underrated</a>
-                </div>
-                <div class="article-item">
-                    <span class="date">2024</span>
-                    <a href="#" class="title">Zero Knowledge Machine Learning: A Path to Privacy</a>
-                </div>
-            </div>
-        </section> -->
 
         <footer class="site-footer">
             <p>Contact me <a href="mailto:adesokanadebare@gmail.com">here</a></p>
+            <div class="footer-links">
+                <a href="mailto:adesokanadebare@gmail.com">email</a>
+                <a href="https://github.com/Barizio" target="_blank" rel="noopener noreferrer">github</a>
+                <a href="https://www.linkedin.com/in/adebare-adesokan-570b7b260" target="_blank"
+                    rel="noopener noreferrer">linkedin</a>
+            </div>
         </footer>
     </div>
 
