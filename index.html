@@ -47,7 +47,7 @@
 
         <section class="intro">
             <p class="greeting">Hi,</p>
-            <h1>Welcome</h1>
+            <h1>Welcome<span class="caret" aria-hidden="true"></span></h1>
             <p>
                 I'm Adebare Adesokan — a final-year Computer Science student at Pan Atlantic University who
                 likes building close to the metal: order-matching engines, blockchains, and small operating
@@ -104,18 +104,6 @@
 
             <div class="project-item">
                 <div class="project-info">
-                    <h3>AI Calendar Planner <span class="badge">Python</span></h3>
-                    <p>
-                        A Flask app that turns natural-language plans into scheduled events — an LLM parser
-                        extracts tasks from free text and syncs them to Google Calendar.
-                    </p>
-                </div>
-                <a href="https://github.com/Barizio/ai-calendar-planner" class="view-source" target="_blank"
-                    rel="noopener noreferrer">view_source</a>
-            </div>
-
-            <div class="project-item">
-                <div class="project-info">
                     <h3>Afara AI <span class="badge">AI</span></h3>
                     <p>
                         An AI platform for preserving African cultural heritage through artifact recognition and
@@ -163,28 +151,7 @@
         </footer>
     </div>
 
-    <script>
-        const toggleButton = document.getElementById('theme-toggle');
-        const body = document.body;
-
-        // 1. Check if user already has a preference saved in LocalStorage
-        const currentTheme = localStorage.getItem('theme');
-        if (currentTheme === 'dark') {
-            body.classList.add('dark-mode');
-        }
-
-        // 2. Listen for button click
-        toggleButton.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-
-            // 3. Save preference to LocalStorage so it remembers next time
-            let theme = 'light';
-            if (body.classList.contains('dark-mode')) {
-                theme = 'dark';
-            }
-            localStorage.setItem('theme', theme);
-        });
-    </script>
+    <script src="main.js"></script>
 
 </body>
 
