@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matching Engine — Project Details</title>
+    <meta name="description" content="A price-time-priority limit order-book matching engine in Java 21 — integer-tick pricing, O(1) cancel, ~1.4M orders/sec.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header class="site-header">
+            <div class="logo">Adebare Adesokan</div>
+
+            <div class="nav-wrapper">
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                </nav>
+
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark Mode">
+                    <svg class="moon-icon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <svg class="sun-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                </button>
+            </div>
+        </header>
+
+        <section class="intro">
+            <p class="greeting"><a href="index.html" style="text-decoration: none;">&larr; Back to Projects</a></p>
+            <h1>Matching Engine</h1>
+            <p>
+                A production-quality limit order-book matching engine in Java 21, implementing strict price-time
+                priority (FIFO within each price level) for a single instrument. Supports limit and market orders on
+                both sides, partial fills, O(1) cancel-by-id, and live top-of-book / depth queries.
+            </p>
+            <div style="margin-top: 20px;">
+                <a href="https://github.com/Barizio/matching-engine" target="_blank" rel="noopener noreferrer" class="view-source">View Source Code</a>
+            </div>
+        </section>
+
+        <section class="projects">
+
+            <div class="project-details-block">
+                <h2 class="mono-heading"><span>></span> the_problem</h2>
+                <p>
+                    An exchange has to decide, for every incoming order, exactly who trades with whom and at what
+                    price — deterministically, in the right order, and fast. The rules are unforgiving: the best
+                    price must trade first, ties break by arrival time, prices must be exact (a cent of rounding
+                    error is a real loss), and cancels have to be instant. I wanted to build that core engine
+                    properly, the way it would be defended in a low-latency trading context.
+                </p>
+            </div>
+
+            <div class="project-details-block">
+                <h2 class="mono-heading"><span>></span> performance</h2>
+                <p>Deterministic, seeded benchmark of 1,000,000 mixed orders (with JIT warmup) on a 2-core laptop:</p>
+                <div class="metric-grid" style="margin-top: 20px;">
+                    <div class="metric">
+                        <div class="num">~1.4M</div>
+                        <div class="label">orders / second</div>
+                    </div>
+                    <div class="metric">
+                        <div class="num">200 ns</div>
+                        <div class="label">p50 latency / op</div>
+                    </div>
+                    <div class="metric">
+                        <div class="num">2.6 µs</div>
+                        <div class="label">p99 latency / op</div>
+                    </div>
+                    <div class="metric">
+                        <div class="num">O(1)</div>
+                        <div class="label">cancel by id</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-details-block">
+                <h2 class="mono-heading"><span>></span> design_decisions</h2>
+                <ul class="feature-list">
+                    <li><strong>Integer ticks, never doubles:</strong> prices are stored as <code>long</code> tick
+                        counts, so crossing comparisons are exact and deterministic — no floating-point rounding.</li>
+                    <li><strong>TreeMap per side + FIFO levels:</strong> bids and asks are red-black trees keyed by
+                        price (bids descending, asks ascending), giving O(log P) access to the best price and
+                        ordered traversal for market sweeps. Each price maps to a FIFO queue, so time priority is
+                        just insertion order.</li>
+                    <li><strong>Intrusive linked list for O(1) cancel:</strong> each order is a node in a
+                        doubly-linked list, and a hash map indexes orders by id — so any order can be located and
+                        unlinked in constant time.</li>
+                    <li><strong>Trades print at the resting price:</strong> the passive order set the price first, so
+                        a crossing aggressor receives any price improvement — the standard continuous-matching rule.</li>
+                    <li><strong>Deterministic logical clock:</strong> the engine assigns ids and timestamps itself,
+                        making every run reproducible for testing and replay.</li>
+                </ul>
+            </div>
+
+            <div class="project-details-block">
+                <h2 class="mono-heading"><span>></span> key_features</h2>
+                <ul class="feature-list">
+                    <li><strong>Order types:</strong> LIMIT and MARKET, on both BUY and SELL sides.</li>
+                    <li><strong>Partial fills:</strong> leftover limit quantity rests on the book; leftover market
+                        quantity is cancelled.</li>
+                    <li><strong>Market data:</strong> best bid / ask, spread, and aggregated depth per side.</li>
+                    <li><strong>Tested &amp; automated:</strong> 48 JUnit 5 tests (including randomized
+                        quantity-conservation and never-crossed-book invariants) run in GitHub Actions CI on every
+                        push.</li>
+                </ul>
+            </div>
+
+            <div class="project-details-block">
+                <h2 class="mono-heading"><span>></span> technologies_used</h2>
+                <div class="tech-tags">
+                    <span>Java 21</span>
+                    <span>Maven</span>
+                    <span>JUnit 5</span>
+                    <span>GitHub Actions</span>
+                </div>
+            </div>
+
+            <div class="project-details-block">
+                <h2 class="mono-heading"><span>></span> what_i_learned</h2>
+                <p>
+                    This project made the cost of every data-structure choice concrete: why a
+                    <strong>TreeMap plus intrusive linked list</strong> beats a naive list once you care about the
+                    complexity of <em>each</em> operation, why <strong>integer arithmetic</strong> is
+                    non-negotiable for correctness, and how much a <strong>deterministic clock</strong> simplifies
+                    testing. I also learned to treat performance as something you <strong>measure honestly</strong> —
+                    warming up the JIT, reporting percentiles, and being candid about timer overhead — rather than
+                    something you claim.
+                </p>
+            </div>
+
+        </section>
+
+        <footer class="site-footer">
+            <p>Contact me <a href="mailto:adesokanadebare@gmail.com">here</a></p>
+            <div class="footer-links">
+                <a href="mailto:adesokanadebare@gmail.com">email</a>
+                <a href="https://github.com/Barizio" target="_blank" rel="noopener noreferrer">github</a>
+                <a href="https://www.linkedin.com/in/adebare-adesokan-570b7b260" target="_blank" rel="noopener noreferrer">linkedin</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const body = document.body;
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') body.classList.add('dark-mode');
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
+        });
+    </script>
+
+</body>
+</html>
