@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adebare Adesokan</title>
-    <meta name="description" content="Adebare Adesokan, a software engineer building systems software: a Java matching engine, a blockchain land registry, and small operating systems in Rust.">
+    <title>Adebare Adesokan — Full-Stack & AI Engineer</title>
+    <meta name="description" content="Adebare Adesokan — full-stack engineer building AI-powered products and high-performance backend systems. Anthropic-certified in Claude and Claude Code.">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
 </head>
 
@@ -46,18 +46,179 @@
         </header>
 
         <section class="intro">
-            <p class="greeting">Hi,</p>
-            <h1>Welcome<span class="caret" aria-hidden="true"></span></h1>
+            <p class="greeting">// full-stack &amp; ai engineering</p>
+            <h1>Hi, I'm Adebare<span class="caret" aria-hidden="true"></span></h1>
             <p>
-                I'm Adebare Adesokan, a software engineer who loves building reliable software and solving hard
-                problems. I work across the full stack, with hands-on experience in Java, backend development,
-                blockchain, and systems programming.
+                I'm a software engineer who builds full-stack products and AI-powered systems — from LLM
+                integrations and agentic workflows to high-performance backends. I've shipped in regulated
+                fintech at Ecobank, tested and documented APIs at Bazara Tech, and won the Google AI4Culture
+                Hackathon. Anthropic-certified in Claude and Claude Code.
             </p>
 
             <p class="sub-text">
-                Check out the <a href="about.html">About</a> section for my background and experience, or browse a
-                few things I've built below.
+                Full background and experience on the <a href="about.html">About</a> page — or browse a few
+                things I've built below.
             </p>
+
+            <div class="btn-row">
+                <a href="resume.pdf" class="btn" download>resume.pdf &darr;</a>
+                <a href="mailto:adesokanadebare@gmail.com" class="btn secondary">email_me</a>
+                <a href="https://github.com/Barizio" class="btn secondary" target="_blank"
+                    rel="noopener noreferrer">github</a>
+            </div>
+        </section>
+
+        <section class="projects">
+            <h2 class="mono-heading"><span>></span> experience</h2>
+
+            <div class="entry">
+                <div class="entry-head">
+                    <h3>Bazara Tech — Product Intern</h3>
+                    <span class="entry-meta">Jul – Sep 2025</span>
+                </div>
+                <p class="entry-sub">API testing, debugging and technical documentation across a fast-moving
+                    B2B product cycle — from sprint planning to QA and release.</p>
+            </div>
+
+            <div class="entry">
+                <div class="entry-head">
+                    <h3>Ecobank — Software Engineering Intern</h3>
+                    <span class="entry-meta">Jul – Oct 2024</span>
+                </div>
+                <p class="entry-sub">Built and optimized Spring Boot REST APIs and a normalized MySQL schema
+                    for high-volume requests in a regulated financial environment.</p>
+            </div>
+
+            <div class="entry">
+                <div class="entry-head">
+                    <h3>Ecobank — Software Engineering Intern</h3>
+                    <span class="entry-meta">Aug – Sep 2023</span>
+                </div>
+                <p class="entry-sub">Shipped React / React Native banking features used by 1M+ active users;
+                    deployed a NestJS + Docker backend platform.</p>
+            </div>
+
+            <div class="entry">
+                <div class="entry-head">
+                    <h3>TotalEnergies — IT Intern</h3>
+                    <span class="entry-meta">Aug – Sep 2022</span>
+                </div>
+                <p class="entry-sub">Kept a critical enterprise environment at zero downtime — ticketing,
+                    incident resolution and asset lifecycle tracking for 50+ devices.</p>
+            </div>
+
+            <a href="about.html" class="explore-more">full_experience -></a>
+        </section>
+
+        <section class="projects">
+            <h2 class="mono-heading"><span>></span> certifications</h2>
+
+            <div class="entry">
+                <div class="entry-head">
+                    <h3>Claude Code Certification <span class="badge">Anthropic</span></h3>
+                    <span class="entry-meta">2026</span>
+                </div>
+                <p class="entry-sub">Agentic software development with Claude Code — MCP servers, hooks,
+                    automation, and multi-step engineering workflows.</p>
+                <div class="cert-tags">
+                    <span>AI Agents</span><span>Model Context Protocol</span><span>AI-Assisted Development</span>
+                </div>
+                <a href="https://verify.skilljar.com/c/2qo4ht46qwpq" class="learn-more" target="_blank"
+                    rel="noopener noreferrer">verify_credential &rarr;</a>
+            </div>
+
+            <div class="entry">
+                <div class="entry-head">
+                    <h3>Claude 101 <span class="badge">Anthropic</span></h3>
+                    <span class="entry-meta">2026</span>
+                </div>
+                <p class="entry-sub">Foundations of building with Claude — capabilities, effective prompting,
+                    and practical LLM workflows.</p>
+                <div class="cert-tags">
+                    <span>Prompt Engineering</span><span>Large Language Models</span><span>Generative AI</span>
+                </div>
+                <a href="https://verify.skilljar.com/c/7qwks2bt9rv9" class="learn-more" target="_blank"
+                    rel="noopener noreferrer">verify_credential &rarr;</a>
+            </div>
+        </section>
+
+        <section class="projects">
+            <h2 class="mono-heading"><span>></span> selected_projects</h2>
+
+            <div class="project-item">
+                <div class="project-info">
+                    <h3>Matching Engine <span class="badge">Java 21</span></h3>
+                    <p>
+                        A production-quality limit order-book matching engine with strict price-time priority,
+                        integer-tick pricing, O(1) cancel, and a benchmark harness clocking ~1.4M orders/sec.
+                    </p>
+                    <a href="matching-engine.html" class="learn-more">learn_more &rarr;</a>
+                </div>
+                <a href="https://github.com/Barizio/matching-engine" class="view-source" target="_blank"
+                    rel="noopener noreferrer">view_source</a>
+            </div>
+
+            <div class="project-item">
+                <div class="project-info">
+                    <h3>Afara AI <span class="badge">AI · Hackathon Winner</span></h3>
+                    <p>
+                        An AI platform for preserving African cultural heritage through artifact recognition and
+                        language translation. Winner of the Google AI4Culture Hackathon.
+                    </p>
+                </div>
+                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7206233774013968384/"
+                    class="view-source" target="_blank" rel="noopener noreferrer">view_source</a>
+            </div>
+
+            <div class="project-item">
+                <div class="project-info">
+                    <h3>LandLedger <span class="badge">Solidity</span></h3>
+                    <p>
+                        A blockchain-based property registry: ERC-721 land titles with a "Two-Gate" security layer
+                        (3-of-3 multi-signature quorum + biometric identity hash) and IPFS off-chain storage.
+                    </p>
+                    <a href="landledger.html" class="learn-more">learn_more &rarr;</a>
+                </div>
+                <a href="https://github.com/Barizio/landchain" class="view-source" target="_blank"
+                    rel="noopener noreferrer">view_source</a>
+            </div>
+
+            <div class="project-item">
+                <div class="project-info">
+                    <h3>Rust Kernel + Bootloader <span class="badge">Rust</span></h3>
+                    <p>
+                        A freestanding x86-64 kernel written in Rust on the <code>bootloader_api</code> crate —
+                        hardware interrupt handling and a framebuffer text writer, booting on bare metal with no
+                        standard library.
+                    </p>
+                </div>
+                <a href="https://github.com/Barizio/kernel_with_bootloader" class="view-source" target="_blank"
+                    rel="noopener noreferrer">view_source</a>
+            </div>
+
+            <div class="project-item">
+                <div class="project-info">
+                    <h3>Shift Management System <span class="badge">Java</span></h3>
+                    <p>Designed for staff at my school to automate shift logging and tracking, replacing manual
+                        paper logs.</p>
+                    <a href="shift-management.html" class="learn-more">learn_more &rarr;</a>
+                </div>
+                <a href="https://github.com/Barizio/SAASMS" class="view-source" target="_blank"
+                    rel="noopener noreferrer">view_source</a>
+            </div>
+
+            <div class="project-item">
+                <div class="project-info">
+                    <h3>BlockBlast Solver <span class="badge">Python</span></h3>
+                    <p>A personal project: an AI tool that searches for the best possible moves in the mobile game
+                        BlockBlast.</p>
+                </div>
+                <a href="https://github.com/Barizio/BlockBlast-Solver" class="view-source" target="_blank"
+                    rel="noopener noreferrer">view_source</a>
+            </div>
+
+            <a href="https://github.com/Barizio" class="explore-more" target="_blank"
+                rel="noopener noreferrer">explore_more -></a>
         </section>
 
         <section class="projects">
@@ -109,84 +270,18 @@
             </div>
         </section>
 
-        <section class="projects">
-            <h2 class="mono-heading"><span>></span> personal_projects</h2>
-
-            <div class="project-item">
-                <div class="project-info">
-                    <h3>Matching Engine <span class="badge">Java 21</span></h3>
-                    <p>
-                        A production-quality limit order-book matching engine with strict price-time priority,
-                        integer-tick pricing, O(1) cancel, and a benchmark harness clocking ~1.4M orders/sec.
-                    </p>
-                    <a href="matching-engine.html" class="learn-more">learn_more &rarr;</a>
-                </div>
-                <a href="https://github.com/Barizio/matching-engine" class="view-source" target="_blank"
-                    rel="noopener noreferrer">view_source</a>
+        <section class="cta-block">
+            <h2 class="mono-heading"><span>></span> get_in_touch</h2>
+            <p>
+                I'm open to software engineering internships and early-career roles — especially in
+                <strong>full-stack</strong> and <strong>AI engineering</strong>. If you're building something
+                ambitious, I'd love to hear about it.
+            </p>
+            <div class="btn-row">
+                <a href="mailto:adesokanadebare@gmail.com" class="btn">say_hello &rarr;</a>
+                <a href="https://www.linkedin.com/in/adebare-adesokan-570b7b260" class="btn secondary"
+                    target="_blank" rel="noopener noreferrer">linkedin</a>
             </div>
-
-            <div class="project-item">
-                <div class="project-info">
-                    <h3>LandLedger <span class="badge">Solidity</span></h3>
-                    <p>
-                        A blockchain-based property registry: ERC-721 land titles with a "Two-Gate" security layer
-                        (3-of-3 multi-signature quorum + biometric identity hash) and IPFS off-chain storage.
-                    </p>
-                    <a href="landledger.html" class="learn-more">learn_more &rarr;</a>
-                </div>
-                <a href="https://github.com/Barizio/landchain" class="view-source" target="_blank"
-                    rel="noopener noreferrer">view_source</a>
-            </div>
-
-            <div class="project-item">
-                <div class="project-info">
-                    <h3>Rust Kernel + Bootloader <span class="badge">Rust</span></h3>
-                    <p>
-                        A freestanding x86-64 kernel written in Rust on the <code>bootloader_api</code> crate —
-                        hardware interrupt handling and a framebuffer text writer, booting on bare metal with no
-                        standard library.
-                    </p>
-                </div>
-                <a href="https://github.com/Barizio/kernel_with_bootloader" class="view-source" target="_blank"
-                    rel="noopener noreferrer">view_source</a>
-            </div>
-
-            <div class="project-item">
-                <div class="project-info">
-                    <h3>Afara AI <span class="badge">AI</span></h3>
-                    <p>
-                        An AI platform for preserving African cultural heritage through artifact recognition and
-                        language translation. Winner of the Google AI4Culture Hackathon.
-                    </p>
-                </div>
-                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7206233774013968384/"
-                    class="view-source" target="_blank" rel="noopener noreferrer">view_source</a>
-            </div>
-
-            <div class="project-item">
-                <div class="project-info">
-                    <h3><a href="shift-management.html" style="text-decoration: none;">Shift Management System</a>
-                        <span class="badge">Java</span></h3>
-                    <p>Designed for staff at my school to automate shift logging and tracking, replacing manual
-                        paper logs.</p>
-                    <a href="shift-management.html" class="learn-more">learn_more &rarr;</a>
-                </div>
-                <a href="https://github.com/Barizio/SAASMS" class="view-source" target="_blank"
-                    rel="noopener noreferrer">view_source</a>
-            </div>
-
-            <div class="project-item">
-                <div class="project-info">
-                    <h3>BlockBlast Solver <span class="badge">Python</span></h3>
-                    <p>A personal project: an AI tool that searches for the best possible moves in the mobile game
-                        BlockBlast.</p>
-                </div>
-                <a href="https://github.com/Barizio/BlockBlast-Solver" class="view-source" target="_blank"
-                    rel="noopener noreferrer">view_source</a>
-            </div>
-
-            <a href="https://github.com/Barizio" class="explore-more" target="_blank"
-                rel="noopener noreferrer">explore_more -></a>
         </section>
 
         <footer class="site-footer">

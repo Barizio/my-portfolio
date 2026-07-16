@@ -539,6 +539,89 @@ body.dark-mode .theme-toggle .moon-icon { display: none; }
     transform: rotate(25deg);
 }
 
+/*
+   11. ADDED: hero buttons, certification tags, contact CTA
+    */
+
+/* Button row under the hero and in the CTA block */
+.btn-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+}
+
+.btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    text-decoration: none;
+    border: 1px solid var(--text-main);
+    color: var(--text-main);
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: var(--text-main);
+    color: var(--bg-color);
+    transform: translateY(-1px);
+}
+
+.btn.secondary {
+    border-color: var(--border-color);
+    color: var(--text-secondary);
+}
+
+.btn.secondary:hover {
+    background-color: var(--hover-bg);
+    color: var(--text-main);
+    border-color: var(--text-muted);
+}
+
+/* Small skill pills under each certification */
+.cert-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.cert-tags span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    background-color: var(--hover-bg);
+    border: 1px solid var(--border-color);
+    padding: 3px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+/* Contact call-to-action block near the footer */
+.cta-block {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 28px;
+    margin-bottom: 60px;
+}
+
+.cta-block .mono-heading {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 12px;
+}
+
+.cta-block p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    max-width: 55ch;
+}
+
+.cta-block strong {
+    color: var(--text-main);
+}
+
 /* Respect users who prefer reduced motion: no movement, nothing hidden */
 @media (prefers-reduced-motion: reduce) {
     .reveal {
@@ -552,6 +635,7 @@ body.dark-mode .theme-toggle .moon-icon { display: none; }
     .project-item,
     .explore-more,
     .learn-more,
+    .btn,
     .theme-toggle svg {
         transition: none;
     }

@@ -22,7 +22,7 @@
 // every renderer, plus a failsafe timeout so content is never left hidden.
 (function () {
     const targets = document.querySelectorAll(
-        '.intro, .project-item, .entry, .project-details-block, .skill-group, .metric'
+        '.intro, .project-item, .entry, .project-details-block, .skill-group, .metric, .cta-block'
     );
     if (!targets.length) return;
 
