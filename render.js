@@ -26,7 +26,26 @@
   function hero() {
     const p = P.profile;
     const c = p.codeObject;
-    const codeStack = c.stack.join(", ");
+    const kw = (t) => `<span class="kw">${t}</span>`;
+    const prop = (t) => `<span class="prop">${esc(t)}</span>`;
+    const str = (t) => `<span class="str">${esc(t)}</span>`;
+    const pun = (t) => `<span class="pun">${esc(t)}</span>`;
+    // Wrap the stack array over two indented lines so nothing overflows.
+    const half = Math.ceil(c.stack.length / 2);
+    const stackLines = [c.stack.slice(0, half), c.stack.slice(half)]
+      .filter((row) => row.length)
+      .map((row) => "    " + row.map(str).join(pun(", ")) + pun(","))
+      .join("\n");
+    const code =
+      kw("const") + " " + prop("adebare") + " " + pun("= {") + "\n" +
+      "  " + prop("name") + pun(":") + " " + str(c.name) + pun(",") + "\n" +
+      "  " + prop("focus") + pun(":") + " " + str(c.focus) + pun(",") + "\n" +
+      "  " + prop("stack") + pun(": [") + "\n" +
+      stackLines + "\n" +
+      "  " + pun("],") + "\n" +
+      "  " + prop("certified") + pun(":") + " " + str(c.certified) + pun(",") + "\n" +
+      "  " + prop("seeking") + pun(":") + " " + str(c.seeking) + "\n" +
+      pun("};");
     set(
       "hero",
       `
@@ -44,13 +63,13 @@
           <a href="${p.links.github}" class="btn secondary" target="_blank" rel="noopener noreferrer">github ↗</a>
         </div>
       </div>
-      <pre class="code-block" aria-hidden="true"><span class="k">const</span> adebare <span class="p">= {</span>
-  <span class="k">name</span><span class="p">:</span> <span class="s">${esc(c.name)}</span><span class="p">,</span>
-  <span class="k">focus</span><span class="p">:</span> <span class="s">${esc(c.focus)}</span><span class="p">,</span>
-  <span class="k">stack</span><span class="p">: [</span><span class="s">${esc(codeStack)}</span><span class="p">],</span>
-  <span class="k">certified</span><span class="p">:</span> <span class="s">${esc(c.certified)}</span><span class="p">,</span>
-  <span class="k">seeking</span><span class="p">:</span> <span class="s">${esc(c.seeking)}</span>
-<span class="p">};</span></pre>`
+      <div class="code-window" aria-hidden="true">
+        <div class="code-bar">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="code-file">adebare.ts</span>
+        </div>
+        <pre class="code-block">${code}</pre>
+      </div>`
     );
   }
 

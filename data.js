@@ -12,7 +12,7 @@ window.PORTFOLIO = {
   profile: {
     name: "Adebare Adesokan",
     wordmark: "adebare.dev",
-    kicker: "// full-stack & ai engineer — lagos, nigeria",
+    kicker: "// full-stack & ai engineer",
     // Hero name is rendered UPPERCASE; split into lines for the big display.
     heroLines: ["ADEBARE", "ADESOKAN"],
     role: "Full-Stack & AI Engineer",
@@ -205,7 +205,6 @@ window.PORTFOLIO = {
     {
       role: "Product Intern",
       org: "Bazara Tech",
-      location: "Nigeria",
       date: "Jul – Sep 2025",
       summary:
         "API testing, debugging and technical documentation across a fast-moving " +
@@ -222,7 +221,6 @@ window.PORTFOLIO = {
     {
       role: "Software Engineering Intern",
       org: "Ecobank Transnational Incorporated",
-      location: "Lagos, Nigeria",
       date: "Jul – Oct 2024",
       summary:
         "Built and optimized Spring Boot REST APIs and a normalized MySQL schema for " +
@@ -239,7 +237,6 @@ window.PORTFOLIO = {
     {
       role: "Software Engineering Intern",
       org: "Ecobank Transnational Incorporated",
-      location: "Lagos, Nigeria",
       date: "Aug – Sep 2023",
       summary:
         "Shipped React / React Native banking features used by 1M+ active users; " +
@@ -255,7 +252,6 @@ window.PORTFOLIO = {
     {
       role: "IT Intern",
       org: "TotalEnergies",
-      location: "Lagos, Nigeria",
       date: "Aug – Sep 2022",
       summary:
         "Kept a critical enterprise environment at zero downtime — ticketing, incident " +
@@ -270,7 +266,6 @@ window.PORTFOLIO = {
     {
       role: "B.Sc. Computer Science",
       org: "Pan-Atlantic University",
-      location: "Lagos, Nigeria",
       date: "Oct 2022 – Dec 2026",
       summary: "B.Sc. in Computer Science.",
       bullets: [
