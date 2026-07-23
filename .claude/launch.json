@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "portfolio",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8123"],
+      "port": 8123
+    },
+    {
+      "name": "pollfinder",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "../pollfinder-ng", "run", "dev"],
+      "port": 3000
+    }
+  ]
+}

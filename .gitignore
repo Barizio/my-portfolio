@@ -1,0 +1,2 @@
+# Claude Code local settings (machine-specific, not for the remote)
+.claude/settings.local.json

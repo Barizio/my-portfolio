@@ -1,111 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LandLedger — Project Details</title>
-    <meta name="description" content="LandLedger — a blockchain-based property registry with ERC-721 land titles, a Two-Gate security layer, and IPFS storage.">
+    <meta name="description"
+        content="LandLedger — a blockchain-based property registry with ERC-721 land titles, a Two-Gate security layer, and IPFS storage.">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
 
-    <div class="container">
-        <header class="site-header">
-            <div class="logo">Adebare Adesokan</div>
-
+    <header class="site-header">
+        <div class="wrap">
+            <div class="logo"><a href="index.html">adebare.dev</a></div>
             <div class="nav-wrapper">
                 <nav>
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
+                    <a href="index.html">home</a>
+                    <a href="about.html">about</a>
                 </nav>
-
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark Mode">
-                    <svg class="moon-icon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-                    <svg class="sun-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <a href="resume.pdf" class="nav-resume" download>resume →</a>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="moon-icon" viewBox="0 0 24 24">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun-icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
                 </button>
             </div>
-        </header>
+        </div>
+    </header>
 
-        <section class="intro">
-            <p class="greeting"><a href="index.html" style="text-decoration: none;">&larr; Back to Projects</a></p>
+    <main class="wrap">
+        <section class="detail-hero">
+            <a href="index.html#projects" class="back-link arrow-link">← back to projects</a>
             <h1>LandLedger</h1>
-            <p>
+            <p style="color:var(--text-dim); max-width:72ch;">
                 A blockchain-based property registration system that represents land titles as ERC-721 tokens,
                 secured by a "Two-Gate" model: a 3-of-3 multi-signature quorum plus a biometric identity hash,
                 with document storage handled off-chain via IPFS.
             </p>
-            <div style="margin-top: 20px;">
-                <a href="https://github.com/Barizio/landchain" target="_blank" rel="noopener noreferrer" class="view-source">View Source Code</a>
+            <div class="btn-row" style="margin-top:22px;">
+                <a href="https://github.com/Barizio/landchain" target="_blank" rel="noopener noreferrer"
+                    class="btn secondary">view_source ↗</a>
             </div>
         </section>
 
-        <section class="projects">
+        <div class="detail-block">
+            <h2>the_problem</h2>
+            <p>
+                Land registries in many places are paper-based, centralized, and vulnerable to fraud: records
+                can be forged, altered, or lost, and a single corrupt official can transfer a title illegitimately.
+                LandLedger asks what a registry looks like if ownership is an immutable on-chain record and no
+                single party can move a title alone.
+            </p>
+        </div>
 
-            <div class="project-details-block">
-                <h2 class="mono-heading"><span>></span> the_problem</h2>
-                <p>
-                    Land registries in many places are paper-based, centralized, and vulnerable to fraud: records
-                    can be forged, altered, or lost, and a single corrupt official can transfer a title illegitimately.
-                    LandLedger asks what a registry looks like if ownership is an immutable on-chain record and no
-                    single party can move a title alone.
-                </p>
+        <div class="detail-block">
+            <h2>key_features</h2>
+            <ul class="feature-list">
+                <li><strong>ERC-721 land titles:</strong> each property is a non-fungible token, giving every
+                    parcel a unique, transferable, tamper-evident on-chain identity.</li>
+                <li><strong>Two-Gate security:</strong> a transfer requires both a 3-of-3 multi-signature quorum
+                    (e.g. seller, buyer, and registry authority) <em>and</em> a matching biometric identity hash,
+                    so no single actor can move a title.</li>
+                <li><strong>IPFS off-chain storage:</strong> heavy documents (deeds, surveys) live on IPFS with
+                    only their content hash stored on-chain, keeping the ledger cheap while preserving integrity.</li>
+                <li><strong>Fraud-blocking tests &amp; gas benchmarks:</strong> a functional test suite covers
+                    valid transfers and blocked fraud attempts, plus a script measuring exact gas cost and a
+                    real-world agency-cost comparison.</li>
+            </ul>
+        </div>
+
+        <div class="detail-block">
+            <h2>technologies_used</h2>
+            <div class="tag-row">
+                <span class="tag">Solidity</span>
+                <span class="tag">Hardhat</span>
+                <span class="tag">ERC-721</span>
+                <span class="tag">IPFS</span>
+                <span class="tag">React</span>
+                <span class="tag">Node.js</span>
             </div>
+        </div>
 
-            <div class="project-details-block">
-                <h2 class="mono-heading"><span>></span> key_features</h2>
-                <ul class="feature-list">
-                    <li><strong>ERC-721 land titles:</strong> each property is a non-fungible token, giving every
-                        parcel a unique, transferable, tamper-evident on-chain identity.</li>
-                    <li><strong>Two-Gate security:</strong> a transfer requires both a 3-of-3 multi-signature quorum
-                        (e.g. seller, buyer, and registry authority) <em>and</em> a matching biometric identity hash,
-                        so no single actor can move a title.</li>
-                    <li><strong>IPFS off-chain storage:</strong> heavy documents (deeds, surveys) live on IPFS with
-                        only their content hash stored on-chain, keeping the ledger cheap while preserving integrity.</li>
-                    <li><strong>Fraud-blocking tests &amp; gas benchmarks:</strong> a functional test suite covers
-                        valid transfers and blocked fraud attempts, plus a script measuring exact gas cost and a
-                        real-world agency-cost comparison.</li>
-                </ul>
-            </div>
+        <div class="detail-block">
+            <h2>what_i_learned</h2>
+            <p>
+                Building LandLedger taught me to think about <strong>security as a protocol</strong>, not a
+                feature — designing the multi-signature quorum and biometric gate forced me to reason about who
+                can do what, and what happens when one party is compromised. I also learned the practical
+                economics of blockchain: <strong>what belongs on-chain versus off-chain</strong>, and why gas
+                cost is a first-class design constraint rather than an afterthought.
+            </p>
+        </div>
+    </main>
 
-            <div class="project-details-block">
-                <h2 class="mono-heading"><span>></span> technologies_used</h2>
-                <div class="tech-tags">
-                    <span>Solidity</span>
-                    <span>Hardhat</span>
-                    <span>ERC-721</span>
-                    <span>IPFS</span>
-                    <span>React</span>
-                    <span>Node.js</span>
-                </div>
-            </div>
-
-            <div class="project-details-block">
-                <h2 class="mono-heading"><span>></span> what_i_learned</h2>
-                <p>
-                    Building LandLedger taught me to think about <strong>security as a protocol</strong>, not a
-                    feature — designing the multi-signature quorum and biometric gate forced me to reason about who
-                    can do what, and what happens when one party is compromised. I also learned the practical
-                    economics of blockchain: <strong>what belongs on-chain versus off-chain</strong>, and why gas
-                    cost is a first-class design constraint rather than an afterthought.
-                </p>
-            </div>
-
-        </section>
-
-        <footer class="site-footer">
-            <p>Contact me <a href="mailto:adesokanadebare@gmail.com">here</a></p>
-            <div class="footer-links">
-                <a href="mailto:adesokanadebare@gmail.com">email</a>
-                <a href="https://github.com/Barizio" target="_blank" rel="noopener noreferrer">github</a>
-                <a href="https://www.linkedin.com/in/adebare-adesokan-570b7b260" target="_blank" rel="noopener noreferrer">linkedin</a>
-            </div>
-        </footer>
-    </div>
+    <footer class="site-footer wrap">
+        <span>© 2026 Adebare Adesokan · built with precision</span>
+        <div class="footer-links">
+            <a href="mailto:adesokanadebare@gmail.com">email</a>
+            <a href="https://github.com/Barizio" target="_blank" rel="noopener noreferrer">github</a>
+            <a href="https://www.linkedin.com/in/adebare-adesokan-570b7b260" target="_blank"
+                rel="noopener noreferrer">linkedin</a>
+        </div>
+    </footer>
 
     <script src="main.js"></script>
 
 </body>
+
 </html>

@@ -1,52 +1,54 @@
-// Shared behaviour for every page: dark-mode toggle + scroll-reveal animations.
+// Shared behaviour for every page: theme toggle + scroll-reveal.
+// Content is rendered by render.js BEFORE this runs (see the script order in
+// each page), so reveal can safely query the populated DOM.
 
-// --- Dark mode ---
+// --- Theme (dark is the default) ---
 (function () {
-    const body = document.body;
-
-    if (localStorage.getItem('theme') === 'dark') {
-        body.classList.add('dark-mode');
-    }
+    const root = document.documentElement;
+    const stored = localStorage.getItem('theme');
+    if (stored === 'light') root.setAttribute('data-theme', 'light');
 
     const toggle = document.getElementById('theme-toggle');
     if (toggle) {
         toggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
+            const isLight = root.getAttribute('data-theme') === 'light';
+            if (isLight) {
+                root.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                root.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
         });
     }
 })();
 
 // --- Reveal on scroll ---
-// Uses getBoundingClientRect rather than IntersectionObserver so it works in
-// every renderer, plus a failsafe timeout so content is never left hidden.
+// getBoundingClientRect (not IntersectionObserver) so it works everywhere, with
+// a failsafe timeout so content is never left hidden.
 (function () {
     const targets = document.querySelectorAll(
-        '.intro, .project-item, .entry, .project-details-block, .skill-group, .metric, .cta-block'
+        '.hero, .section-title, .stat-grid, .skill-group, .card, .exp, .cert, .feature-list, .detail-block'
     );
     if (!targets.length) return;
 
     const revealAll = () => targets.forEach((el) => el.classList.add('visible'));
 
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced) {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         revealAll();
         return;
     }
 
     targets.forEach((el, i) => {
         el.classList.add('reveal');
-        // Gentle stagger, capped so later items don't feel sluggish.
-        el.style.transitionDelay = Math.min(i, 8) * 60 + 'ms';
+        el.style.transitionDelay = Math.min(i % 6, 5) * 60 + 'ms';
     });
 
     const revealInView = () => {
-        const viewportH = window.innerHeight || document.documentElement.clientHeight;
+        const vh = window.innerHeight || document.documentElement.clientHeight;
         targets.forEach((el) => {
             if (el.classList.contains('visible')) return;
-            if (el.getBoundingClientRect().top < viewportH - 40) {
-                el.classList.add('visible');
-            }
+            if (el.getBoundingClientRect().top < vh - 40) el.classList.add('visible');
         });
     };
 
@@ -54,17 +56,12 @@
     const onScroll = () => {
         if (ticking) return;
         ticking = true;
-        requestAnimationFrame(() => {
-            revealInView();
-            ticking = false;
-        });
+        requestAnimationFrame(() => { revealInView(); ticking = false; });
     };
 
-    revealInView(); // reveal whatever is already on screen
+    revealInView();
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll, { passive: true });
     window.addEventListener('load', revealInView);
-
-    // Failsafe: never leave content hidden if something goes wrong.
     setTimeout(revealAll, 2500);
 })();
