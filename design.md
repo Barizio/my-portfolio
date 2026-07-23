@@ -113,11 +113,6 @@ Two stacked lines:
 Numbers are zero-padded and drive the "table of contents" feel. When you add a
 section, renumber sequentially.
 
-### Code block (hero aside)
-`--bg3` panel, `1px` `--border`, `JetBrains Mono`, a faux object literal
-(`const adebare = { ... }`). Keys in `--accent`, strings in a soft green/`--text`,
-punctuation in `--muted`. Purely decorative; keep it short.
-
 ### Stat tile
 Grid of 3–4 tiles. Big Syne number (`--accent` or `--text`) over a small
 `--muted` label. Hairline top border, generous padding.
@@ -153,7 +148,7 @@ Small `--muted` issuer label (e.g. `Anthropic`, `BCG / Forage`), cert name in
 
 `index.html` is a single scrolling page:
 
-1. **Hero** — kicker, giant name, role line, one-line pitch, stack line, CTAs, code aside.
+1. **Hero** — kicker, giant name, role line, one-line pitch, stack line, CTAs.
 2. **01 — About** — bio (2–3 paragraphs) + stat tiles.
 3. **02 — Skills** — grouped tech tag clusters.
 4. **03 — Projects** — selected engineering projects (cards).

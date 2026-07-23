@@ -32,14 +32,6 @@ window.PORTFOLIO = {
       github: "https://github.com/Barizio",
       linkedin: "https://www.linkedin.com/in/adebare-adesokan-570b7b260",
     },
-    // Decorative code block beside the hero. Keep it short.
-    codeObject: {
-      name: '"Adebare Adesokan"',
-      focus: '"Full-Stack / AI"',
-      stack: ['"Java"', '"Spring Boot"', '"Python"', '"React"', '"Claude Code"'],
-      certified: '"Anthropic: Claude + Claude Code"',
-      seeking: '"SWE internships & early-career roles"',
-    },
   },
 
   /* ---- About + stats -------------------------------------------------- */

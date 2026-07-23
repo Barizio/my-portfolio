@@ -148,9 +148,8 @@ a:focus-visible, button:focus-visible {
     .site-header nav { display: none; }
 }
 
-/* Small phones: shrink the code window type so it fits without scrolling */
+/* Small phones */
 @media (max-width: 480px) {
-    .code-block { font-size: 0.72rem; padding: 16px 16px; line-height: 1.75; }
     .stat .num { font-size: 1.6rem; }
 }
 
@@ -182,16 +181,6 @@ section { scroll-margin-top: 80px; }
 /* ---- 5. HERO ------------------------------------------------------- */
 .hero {
     padding-top: clamp(60px, 12vh, 120px);
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 48px;
-}
-/* min-width:0 lets grid children shrink below their content's min-size,
-   so the code <pre> scrolls internally instead of widening the page. */
-.hero > * { min-width: 0; }
-
-@media (min-width: 900px) {
-    .hero { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); align-items: center; }
 }
 
 .hero-kicker {
@@ -238,55 +227,6 @@ section { scroll-margin-top: 80px; }
     color: var(--muted);
     margin-bottom: 30px;
 }
-
-/* Hero code aside — editor window */
-.code-window {
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 24px 60px -28px rgba(0, 0, 0, 0.55);
-    width: 100%;
-}
-.code-bar {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    padding: 11px 15px;
-    background: var(--bg2);
-    border-bottom: 1px solid var(--border);
-}
-.code-bar .dot { width: 11px; height: 11px; border-radius: 50%; }
-.code-bar .dot:nth-child(1) { background: #ff5f56; }
-.code-bar .dot:nth-child(2) { background: #ffbd2e; }
-.code-bar .dot:nth-child(3) { background: #27c93f; }
-.code-bar .code-file {
-    margin-left: auto;
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    color: var(--muted);
-}
-.code-block {
-    margin: 0;
-    padding: 20px 22px;
-    font-family: var(--font-mono);
-    font-size: 0.82rem;
-    line-height: 1.85;
-    color: var(--text-dim);
-    tab-size: 2;
-    /* pre-wrap keeps indentation but wraps long lines, so the snippet never
-       forces the page (or the mobile layout viewport) wider than its column. */
-    white-space: pre-wrap;
-    overflow-wrap: break-word;
-}
-/* Syntax tokens (GitHub-dark inspired) */
-.code-block .kw   { color: #ff7b72; }
-.code-block .prop { color: #79c0ff; }
-.code-block .str  { color: #7ee787; }
-.code-block .pun  { color: var(--muted); }
-[data-theme="light"] .code-block .kw   { color: #cf222e; }
-[data-theme="light"] .code-block .prop { color: #0550ae; }
-[data-theme="light"] .code-block .str  { color: #0a7c42; }
 
 /* ---- 6. BUTTONS ---------------------------------------------------- */
 .btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
